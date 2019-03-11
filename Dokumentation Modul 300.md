@@ -11,6 +11,3 @@ Ich werde einen LAMP-Stack vollautomatisiert ausetzen lassen. Ich werde dementsp
 ## Vorwissen/Vorgehen:
 
 Ich konnte in meinem Geschäft bereits viel Erfahrung mit Apache2, Linux und Git/Github machen. In diesem Modul wird mich vorallem die Automatisierung eine neue Erfahrung für mich werden. Anstatt mit irrgendwelchen Startup-Scripts, werde ich custom Images erstellen, welche die gewünschten Einstellungen bereits haben und nur noch gestartet werden müssen durch Vagrant.
-
-
-
