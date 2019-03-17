@@ -640,4 +640,22 @@ cloud-init[732]: +---[ECDSA 256]---+
 
 Ubuntu 18.04.2 LTS ubuntu-bionic ttyS0
 
-ubuntu-bionic login: 
+ubuntu-bionic login: [   59.173754] cloud-init[1808]: Cloud-init v. 18.5-21-g8ee294d5-0ubuntu1~18.04.1 running 'modules:config' at Sun, 17 Mar 2019 16:07:40 +0000. Up 58.71 seconds.
+ci-info: no authorized ssh keys fingerprints found for user ubuntu.
+<14>Mar 17 16:07:41 ec2: 
+<14>Mar 17 16:07:41 ec2: #############################################################
+<14>Mar 17 16:07:41 ec2: -----BEGIN SSH HOST KEY FINGERPRINTS-----
+<14>Mar 17 16:07:41 ec2: 1024 SHA256:bKsSsJ6UDzHGDSAx+S1GHUTrp/i+Rfv8SayYgupZxmM root@ubuntu-bionic (DSA)
+<14>Mar 17 16:07:41 ec2: 256 SHA256:gQu44wINrM2dDRPHtK/P1J6lzbFEJGDe2sqQxxxQLK8 root@ubuntu-bionic (ECDSA)
+<14>Mar 17 16:07:41 ec2: 256 SHA256:Gb8N7y4hF6djYxTA662JfeMMa95yHKgtiArRGMTmtFU root@ubuntu-bionic (ED25519)
+<14>Mar 17 16:07:41 ec2: 2048 SHA256:6AIGxBeIliPOlmYk0v25AAPNba8UZ3CvgjSawav7dt4 root@ubuntu-bionic (RSA)
+<14>Mar 17 16:07:41 ec2: -----END SSH HOST KEY FINGERPRINTS-----
+<14>Mar 17 16:07:41 ec2: #############################################################
+-----BEGIN SSH HOST KEY KEYS-----
+ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBCOeWSGVn1gEZzOo0ypGaWhYq7ZQQN9NAVZTKPWSkcd1u2Lykn/vWH8ALSYyUszQWNRtLZ8cOhXjl3UjTePI8G0= root@ubuntu-bionic
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAio0p/SEDzPAxgzmUa8z4Lr1nQAKd3SA/l7t82rT5Y3 root@ubuntu-bionic
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDHCI9DdzN0s7ngT4hsvIiBUzqZ4Z1BV1Vq1ESckErM8CWSJs2DyVedULV02QHfTC7d5mxYWEXU9whd/QGXx9MgVvgdQU/lsXGbvLBY6mwIca7iMv0fmpF8UQzr+/J9Iwx2h6193CFBTuzbpLIUzC3BuEB2W0OnX+P6jSFMEz+a4MVvB7DW8J36XsJXTD9fTbDPcIatP4Mrq9MjV1/fnYDGW41osZA3TShMEQ/9FRZZuXmOdkavi+9ixU7VCFONPDLj/lGCrZLNjthRSJfjrm6KqVIph57Wo/IBjtPklpm8xuNbRJl3kLXc0ozZFNd4w87WIwBU/7uUXZriTH7NSMhL root@ubuntu-bionic
+-----END SSH HOST KEY KEYS-----
+[   59.782280] cloud-init[1873]: Cloud-init v. 18.5-21-g8ee294d5-0ubuntu1~18.04.1 running 'modules:final' at Sun, 17 Mar 2019 16:07:41 +0000. Up 59.59 seconds.
+[   59.782378] cloud-init[1873]: ci-info: no authorized ssh keys fingerprints found for user ubuntu.
+[   59.783803] cloud-init[1873]: Cloud-init v. 18.5-21-g8ee294d5-0ubuntu1~18.04.1 finished at Sun, 17 Mar 2019 16:07:41 +0000. Datasource DataSourceNoCloud [seed=/dev/sdb][dsmode=net].  Up 59.77 seconds
