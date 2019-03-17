@@ -15,6 +15,10 @@ Vagrant.configure("2") do |config|
   end
 
   config.vm.provision "shell", inline: <<-SHELL
+    ufw allow 80/tcp
+    ufw allow from 127.0.0.1 to any port 22
+    ufw allow from 10.0.2.15 to any port 3306
+  
     apt-get update
 
     APP_PASS="m300apppw"
