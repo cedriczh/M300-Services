@@ -6,13 +6,13 @@ Dies ist eine Dokumentation zur Arbeit im Modul 300 von Cédric Droz.
 
 ## Initielle Idee:
 
-Ich werde einen LAMP-Stack vollautomatisiert ausetzen lassen. Ich werde dementsprechende Firewallrules setzen und eine angepasste Standardseite des Apache2 Webservers hinterlegen, welche automatisch auf Port 80 Freigegeben wird.
+Ich werde mit Hilfe von Vagrant ein LAMP-Stack erstellen, welcher nur mit einem Befehl soweit alles fertig aufsetzt. Firewallrules, eine angepasste Apache2 Standard-Seite und MySQL mit phpmyadmin werden auf dem System vorkonfiguriert installiert. Netzwerktechnisch werden entsprechende Firewallrules generiert und die Ports so weitergeleitet, dass auch von der Host-Maschine auf den Webserver zugegriffen werden kann.
 
 
 
 ## Vorwissen/Vorgehen:
 
-Ich konnte in meinem Geschäft bereits viel Erfahrung mit Apache2, Linux und Git/Github machen. In diesem Modul wird mich vorallem die Automatisierung eine neue Erfahrung für mich werden. Anstatt mit irrgendwelchen Startup-Scripts, werde ich ein Vagrantfile erstellen, welche die gewünschten Einstellungen bereits haben und nur noch gestartet werden müssen durch Vagrant.
+Ich konnte in meinem Geschäft bereits viel Erfahrung mit Apache2, Linux und Git/Github machen. In diesem Modul wird für mich vorallem die Automatisierung eine neue Erfahrung werden. Anstatt mit irrgendwelchen Startup-Scripts, werde ich ein Vagrantfile erstellen, welches die gewünschten Einstellungen bereits beinhaltet und nur noch durch Vagrant gestartet werden muss.
 
 
 
