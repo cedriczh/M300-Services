@@ -44,7 +44,8 @@ Wenn mein eigenes Vagrantfile auf einem lokalen Computer ausgeführt wird, wird 
 
 Hier noch das Vagrantfile:
 
-`Vagrant.configure("2") do |config|
+```ruby
+Vagrant.configure("2") do |config|
 
   config.vm.box = "ubuntu/bionic64"
 
@@ -94,7 +95,8 @@ Hier noch das Vagrantfile:
 
   SHELL
 
-end`
+end
+```
 
 
 
