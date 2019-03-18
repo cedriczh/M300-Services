@@ -32,6 +32,7 @@ Vagrant.configure("2") do |config|
     echo "phpmyadmin phpmyadmin/reconfigure-webserver multiselect apache2" | debconf-set-selections
 
     apt-get -y install apache2 mysql-server phpmyadmin
+    ufw enable
   SHELL
 
 end
