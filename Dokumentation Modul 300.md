@@ -1,6 +1,8 @@
-# Dokumentation Modul 300
+# Dokumentation Modul 300 - Cédric Droz
 
 Dies ist eine Dokumentation zur Arbeit im Modul 300 von Cédric Droz.
+
+
 
 ## Initielle Idee:
 
@@ -38,3 +40,10 @@ Bei der VM, welche ich mit dem Vagrantfile nach meinen Wünschen angepasst habe,
 
 Wenn mein eigenes Vagrantfile auf einem lokalen Computer ausgeführt wird, wird als erstes ein "sauberes" Ubuntu 18.04 erstellt, dort werden danach die entsprechenden Netzwerkeinstellungen vorgenommen. Dies bedeutet Port-Freigaben und Firewall-Regeln. Nachdem die Netzwerkeinstellungen gemacht wurden, wird noch ein Sync erstellt, damit im gleichen Verzeichnis indem das Vagrantfile vorhanden ist, ein angepasstes "index.html"-File abgelegt werden, kann, welches durch den Webserver gleich benutzt wird. Danach wird das apt-Repo aktualisiert und die oben genannten Tools installiert. Speziell ist da, dass bei der installation von "phpmyadmin" eigentlich noch eine Prompt kommt, welche auch mit dem Zusatz "-y" nicht übersprungen wird. Dies musste ich auch noch passend machen, damit die Installation vollkommen inputlos von Statten laufen kann. 
 
+
+
+## Reflexion/Wissenszuwachs:
+
+Ich fand persönlich diese Arbeit ziemlich spannend, da ich noch nie richtig mit Vagrant in Kontakt gekommen bin, jedoch viele Begriffe diesbezüglich oft gehört habe. Nun einmal ein kleines Projekt auf die Beine gestellt zu haben, hat mir persönlich geholfen, näher das Thema Container zu betrachten und zu verstehen.
+
+Es gab natürlich viele Situationen während dieser Arbeit, bei denen ich nicht selber weiter Wusste und dem Internet ein paar Fragen stellen musste oder ein Tutorial als Verständnisstütze anschauen musste. Ich bin jedoch zufrieden mit dem Endergebnis.
