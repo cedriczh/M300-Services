@@ -38,7 +38,63 @@ Bei der VM, welche ich mit dem Vagrantfile nach meinen Wünschen angepasst habe,
 
 ## Was wird beim Setup mit "vagrant up" alles gemacht?
 
-Wenn mein eigenes Vagrantfile auf einem lokalen Computer ausgeführt wird, wird als erstes ein "sauberes" Ubuntu 18.04 erstellt, dort werden danach die entsprechenden Netzwerkeinstellungen vorgenommen. Dies bedeutet Port-Freigaben und Firewall-Regeln. Nachdem die Netzwerkeinstellungen gemacht wurden, wird noch ein Sync erstellt, damit im gleichen Verzeichnis indem das Vagrantfile vorhanden ist, ein angepasstes "index.html"-File abgelegt werden, kann, welches durch den Webserver gleich benutzt wird. Danach wird das apt-Repo aktualisiert und die oben genannten Tools installiert. Speziell ist da, dass bei der installation von "phpmyadmin" eigentlich noch eine Prompt kommt, welche auch mit dem Zusatz "-y" nicht übersprungen wird. Dies musste ich auch noch passend machen, damit die Installation vollkommen inputlos von Statten laufen kann. 
+Wenn mein eigenes Vagrantfile auf einem lokalen Computer ausgeführt wird, wird als erstes ein "sauberes" Ubuntu 18.04 erstellt, dort werden danach die entsprechenden Netzwerkeinstellungen vorgenommen. Dies bedeutet Port-Freigaben und Firewall-Regeln. Nachdem die Netzwerkeinstellungen gemacht wurden, wird noch ein Sync erstellt, damit im gleichen Verzeichnis indem das Vagrantfile vorhanden ist, ein angepasstes "index.html"-File abgelegt werden, kann, welches durch den Webserver gleich benutzt wird. Danach wird das apt-Repo aktualisiert und die oben genannten Tools installiert. Speziell ist da, dass bei der installation von "phpmyadmin" eigentlich noch eine Prompt kommt, welche auch mit dem Zusatz "-y" nicht übersprungen wird. Dies musste ich auch noch passend machen, damit die Installation vollkommen inputlos von Statten laufen kann. Ganz am Schluss wird dann noch die Firewall mit den entsprechenden Regeln aktiviert
+
+
+
+Hier noch das Vagrantfile:
+
+`Vagrant.configure("2") do |config|
+
+  config.vm.box = "ubuntu/bionic64"
+
+  config.vm.network "forwarded_port", guest: 80, host: 8080
+
+  config.vm.synced_folder ".", "/var/www/html"
+
+  config.vm.provider "virtualbox" do |vb| 
+
+​    vb.memory = "2048"
+
+  end
+
+  config.vm.provision "shell", inline: <<-SHELL
+
+​    ufw allow 80/tcp
+
+​    ufw allow from 127.0.0.1 to any port 22
+
+​    ufw allow from 10.0.2.15 to any port 3306
+
+  
+
+​    apt-get update
+
+​    APP_PASS="m300apppw"
+
+​    ROOT_PASS="m300rootpw"
+
+​    APP_DB_PASS="m300dbpw"
+
+​    
+
+​    echo "phpmyadmin phpmyadmin/dbconfig-install boolean true" | debconf-set-selections
+
+​    echo "phpmyadmin phpmyadmin/app-password-confirm password $APP_PASS" | debconf-set-selections
+
+​    echo "phpmyadmin phpmyadmin/mysql/admin-pass password $ROOT_PASS" | debconf-set-selections
+
+​    echo "phpmyadmin phpmyadmin/mysql/app-pass password $APP_DB_PASS" | debconf-set-selections
+
+​    echo "phpmyadmin phpmyadmin/reconfigure-webserver multiselect apache2" | debconf-set-selections
+
+​    apt-get -y install apache2 mysql-server phpmyadmin
+
+​    ufw enable
+
+  SHELL
+
+end`
 
 
 
